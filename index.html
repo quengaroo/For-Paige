@@ -28,20 +28,14 @@
         body {
             font-family: 'Poppins', sans-serif;
             background: var(--bg-gradient);
-            min-height: 100dvh;
+            min-height: 100svh;
             overflow: hidden;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
+            padding-top: 40px;
             color: var(--text-color);
             perspective: 1000px;
-            padding-bottom: env(safe-area-inset-bottom);
-            }
-
-            @media (max-width: 600px) {
-        body {
-            align-items: flex-start;
-            padding-top: 24px;
         }
 
         /* Particle Background */
@@ -526,6 +520,7 @@
 
 
 </html>
+
 
 
 
