@@ -421,16 +421,19 @@
             const container = document.getElementById('screen-proposal');
             const containerRect = container.getBoundingClientRect();
             const btnRect = btn.getBoundingClientRect();
-
+            
             const btnWidth = btnRect.width;
             const btnHeight = btnRect.height;
-
-            const maxX = containerRect.width - btnWidth - 20;
-            const maxY = containerRect.height - btnHeight - 20;
-
-            const x = Math.random() * maxX;
-            const y = Math.random() * maxY;
-
+            
+            const margin = 60; // bigger margin = less movement
+            
+            // Shrink movement area so it never reaches edges
+            const safeWidth = containerRect.width - btnWidth - margin * 2;
+            const safeHeight = containerRect.height - btnHeight - margin * 2;
+            
+            const x = Math.random() * safeWidth + margin;
+            const y = Math.random() * safeHeight + margin;
+            
             btn.style.position = 'absolute';
             btn.style.left = x + 'px';
             btn.style.top = y + 'px';
@@ -499,5 +502,6 @@
         }
     </script>
 </body>
+
 
 </html>
