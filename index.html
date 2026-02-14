@@ -319,7 +319,7 @@
 
     <!-- Audio -->
     <audio id="bgMusic" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3" type="audio/mp3">
+        <source src="music/vibehorn-romantic-piano-431010.mp3" type="audio/mp3">
     </audio>
     <div class="music-control" onclick="toggleMusic()">🎵</div>
 
@@ -354,7 +354,7 @@
             const target = document.getElementById(targetId);
             target.classList.add('active');
 
-            if (targetId === 'screen-intro') {
+            if (!isPlaying) {
                 playMusic();
             }
             if (targetId === 'screen-letter') {
@@ -505,3 +505,4 @@
 
 
 </html>
+
