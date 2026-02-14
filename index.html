@@ -29,19 +29,19 @@
             font-family: 'Poppins', sans-serif;
             background: var(--bg-gradient);
             min-height: 100dvh;
+            overflow: hidden;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             color: var(--text-color);
             perspective: 1000px;
-        
+            padding-bottom: env(safe-area-inset-bottom);
+            }
+
+            @media (max-width: 600px) {
+        body {
+            align-items: flex-start;
             padding-top: 24px;
-            padding-left: 12px;
-            padding-right: 12px;
-            padding-bottom: calc(24px + env(safe-area-inset-bottom));
-        
-            overflow-x: hidden;
-            overflow-y: auto;
         }
 
         /* Particle Background */
@@ -526,6 +526,7 @@
 
 
 </html>
+
 
 
 
