@@ -28,13 +28,20 @@
         body {
             font-family: 'Poppins', sans-serif;
             background: var(--bg-gradient);
-            min-height: 100svh;
-            overflow: hidden;
+            min-height: 100dvh;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             color: var(--text-color);
             perspective: 1000px;
+        
+            padding-top: 24px;
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-bottom: calc(24px + env(safe-area-inset-bottom));
+        
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         /* Particle Background */
@@ -519,6 +526,7 @@
 
 
 </html>
+
 
 
 
