@@ -268,7 +268,7 @@
     <div class="container active" id="screen-intro">
         <h1>Hi bb... ✨</h1>
         <p>I made you a little something. I hope you like it.</p>
-        <button class="btn" onclick="nextScreen('screen-gallery')">Click to Open ❤️</button>
+        <button class="btn" onclick="startExperience()">Click to Open ❤️</button>
     </div>
 
     <!-- Screen 2: Gallery -->
@@ -354,9 +354,6 @@
             const target = document.getElementById(targetId);
             target.classList.add('active');
 
-            if (!isPlaying) {
-                playMusic();
-            }
             if (targetId === 'screen-letter') {
                 startTypewriter();
             }
@@ -365,6 +362,23 @@
         // Music Control
         const music = document.getElementById('bgMusic');
         let isPlaying = false;
+
+        function startExperience() {
+        // This runs directly on the user click
+        music.currentTime = 0;
+        music.volume = 0.8;
+    
+        const p = music.play();
+        if (p !== undefined) {
+            p.then(() => {
+                isPlaying = true;
+            }).catch(err => {
+                console.log("Play blocked:", err);
+            });
+        }
+
+    nextScreen('screen-gallery');
+}
 
         function toggleMusic() {
             if (isPlaying) {
@@ -505,4 +519,5 @@
 
 
 </html>
+
 
