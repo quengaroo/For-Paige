@@ -28,15 +28,16 @@
         body {
             font-family: 'Poppins', sans-serif;
             background: var(--bg-gradient);
-            min-height: 100svh;
+            min-height: 100dvh;
             overflow: hidden;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            padding-top: 40px;
+            align-items: center;
             color: var(--text-color);
             perspective: 1000px;
-        }
+            padding: 16px;
+            padding-bottom: calc(16px + env(safe-area-inset-bottom));
+            }
 
         /* Particle Background */
         #particles {
@@ -96,6 +97,10 @@
         .container.active {
             display: flex;
             animation: fadeIn 0.8s ease-out;
+        }
+
+        #screen-gallery {
+            margin-top: 20px;
         }
 
         @keyframes fadeIn {
@@ -520,6 +525,7 @@
 
 
 </html>
+
 
 
 
